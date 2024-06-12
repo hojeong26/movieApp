@@ -1,6 +1,15 @@
 import { Component } from "../core/heropy"
 
+interface State{
+    [key: string]: unknown //인덱싱 가능한 타입
+    menus: {
+        name: string
+        href: string
+    }[]
+}
+
 export default class TheHeader extends Component{
+    public state!: State
     constructor() {
         super({
             tagName:'header',
