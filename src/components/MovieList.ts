@@ -1,6 +1,6 @@
 import { Component } from "../core/heropy"
 import movieStore from "../store/movie"
-import MovieItem from "../components/MovieItem"
+import MovieItem from "./MovieItem"
 
 export default class MovieList extends Component{
     constructor() {
@@ -33,9 +33,9 @@ export default class MovieList extends Component{
             }).el)
         )
 
-        const loaderEl = this.el.querySelector('.the-loader')
+        const loaderEl = this.el.querySelector('.the-loader')// as HTMLDivElement
         movieStore.state.loading 
-            ? loaderEl.classList.remove('hide')
-            : loaderEl.classList.add('hide')
+            ? loaderEl?.classList.remove('hide')
+            : loaderEl?.classList.add('hide')
     }
 }
